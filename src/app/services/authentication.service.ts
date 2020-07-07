@@ -26,17 +26,17 @@ export class AuthenticationService {
     const user = users.find(x => x.username === username && x.password === password);
     if (!user) {
       return this.error('Username or password is incorrect');
-    };
+    }
     return this.success({
       username: user.username,
       firstName: user.firstName,
       lastName: user.lastName
-    })
+    });
   }
 
   // success code and body
   success(body?) {
-    return of(new HttpResponse({ status: 200, body }))
+    return of(new HttpResponse({ status: 200, body }));
   }
 
   // for error handling
